@@ -49,13 +49,17 @@ func Read(text string) (string, error) {
 		}
 	}
 
+	fmt.Println("before NewInput")
 	input := NewInput(text)
 
+	fmt.Println("before input.Print")
 	input.Print()
 
+	fmt.Println("before keyboardListener")
 	if err := keyboardListener(input); err != nil {
 		return "", err
 	}
 
+	fmt.Println("before input.GetCurrentText")
 	return input.GetCurrentText(), nil
 }
