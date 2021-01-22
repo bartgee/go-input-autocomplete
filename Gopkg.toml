@@ -26,6 +26,10 @@
 
 
 [[constraint]]
+branch = "fix_windows_server_2012r2_error"
+name = "github.com/bartgee/go-input-autocomplete"
+
+[[constraint]]
   branch = "master"
   name = "github.com/eiannone/keyboard"
 
