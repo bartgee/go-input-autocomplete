@@ -27,10 +27,6 @@
 
 [[constraint]]
   branch = "master"
-  name = "github.com/JoaoDanielRufino/go-input-autocomplete"
-
-[[constraint]]
-  branch = "master"
   name = "github.com/eiannone/keyboard"
 
 [[constraint]]
