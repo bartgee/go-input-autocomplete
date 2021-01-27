@@ -24,17 +24,12 @@
 #   go-tests = true
 #   unused-packages = true
 
-
-[[override]]
-  branch = "master"
-  name = "github.com/bartgee/fix_windows_server_2012r2_error"
-
 [[constraint]]
   branch = "master"
   name = "github.com/eiannone/keyboard"
 
 [[constraint]]
-  branch = "master"
+  branch = "release-branch.go1.13"
   name = "golang.org/x/sys"
 
 [prune]
