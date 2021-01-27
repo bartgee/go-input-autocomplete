@@ -2,10 +2,8 @@ package input_autocomplete
 
 import (
 	"fmt"
-	"runtime"
-	"strings"
-
 	"github.com/eiannone/keyboard"
+	"runtime"
 )
 
 func keyboardListener(input *Input) error {
@@ -45,12 +43,12 @@ func Read(text string) (string, error) {
 
 	os := runtime.GOOS
 	if os == "windows" {
-		version := getWindowsVersion()
-		if !strings.Contains(version[1], "2012") {
+		// version := getWindowsVersion()
+		// if !strings.Contains(version[1], "2012") {
 			if err := EnableVirtalTerminalWindows(); err != nil {
 				return "", err
 			}
-		}
+		// }
 	}
 
 	fmt.Println("before NewInput")

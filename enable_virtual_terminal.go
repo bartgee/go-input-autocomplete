@@ -11,6 +11,7 @@ import (
 
 func EnableVirtalTerminalWindows() error {
 	var originalMode uint32
+	// var vtInputSupported bool
 	fmt.Println("before windows.Handle")
 	stdout := windows.Handle(os.Stdout.Fd())
 
@@ -21,6 +22,9 @@ func EnableVirtalTerminalWindows() error {
 	}
 
 	fmt.Println("before windows.SetConsoleMode")
-	return windows.SetConsoleMode(stdout, originalMode|windows.ENABLE_VIRTUAL_TERMINAL_PROCESSING)
-	return windows.SetConsoleMode(stdout, originalMode|windows.ENABLE_VIRTUAL_TERMINAL_INPUT)
+	if err := windows.SetConsoleMode(stdout, originalMode|windows.ENABLE_VIRTUAL_TERMINAL_PROCESSING); err != nil {
+		// vtInputSupported := true
+		return nil
+	}
+	return windows.SetConsoleMode(stdout, originalMode)
 }
