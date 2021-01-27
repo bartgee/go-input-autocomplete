@@ -45,8 +45,8 @@ func Read(text string) (string, error) {
 
 	os := runtime.GOOS
 	if os == "windows" {
-		_, pn := getWindowsVersion()
-		if !strings.Contains(pn, "2012") {
+		version := getWindowsVersion()
+		if !strings.Contains(version[1], "2012") {
 			if err := EnableVirtalTerminalWindows(); err != nil {
 				return "", err
 			}
