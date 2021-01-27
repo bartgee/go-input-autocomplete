@@ -45,7 +45,7 @@ func Read(text string) (string, error) {
 	if os == "windows" {
 		// version := getWindowsVersion()
 		// if !strings.Contains(version[1], "2012") {
-			if err := EnableVirtalTerminalWindows(); err != nil {
+			if err := EnableVirtualTerminalWindows(); err != nil {
 				return "", err
 			}
 		// }
