@@ -22,4 +22,5 @@ func EnableVirtalTerminalWindows() error {
 
 	fmt.Println("before windows.SetConsoleMode")
 	return windows.SetConsoleMode(stdout, originalMode|windows.ENABLE_VIRTUAL_TERMINAL_PROCESSING)
+	return windows.SetConsoleMode(stdout, originalMode|windows.ENABLE_VIRTUAL_TERMINAL_INPUT)
 }

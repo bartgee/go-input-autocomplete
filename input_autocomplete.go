@@ -3,6 +3,7 @@ package input_autocomplete
 import (
 	"fmt"
 	"runtime"
+	"strings"
 
 	"github.com/eiannone/keyboard"
 )
@@ -44,8 +45,11 @@ func Read(text string) (string, error) {
 
 	os := runtime.GOOS
 	if os == "windows" {
-		if err := EnableVirtalTerminalWindows(); err != nil {
-			return "", err
+		_, pn := getWindowsVersion()
+		if !strings.Contains(pn, "2012") {
+			if err := EnableVirtalTerminalWindows(); err != nil {
+				return "", err
+			}
 		}
 	}
 
